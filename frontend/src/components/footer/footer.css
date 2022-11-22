@@ -1,0 +1,38 @@
+/* .fLists{
+    display: flex;
+    gap: 100px;
+}
+li{
+    list-style-type: none;
+    font-size: 20px;
+}
+h3{
+    font-size: 30px;
+} */
+.footer{
+    width: 100%;
+    width: 1024px;
+    font-size: 20px;
+}
+.fLists{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 50px;
+}
+.fListHeading{
+    color: rgb(68, 67, 67);
+    margin-bottom: 10px;
+    margin-top: 20px;
+}
+.fListItem{
+    color: rgb(88, 87, 88);
+    list-style-type: none;
+    margin-top: 7px;
+    margin-bottom: 7px;
+    cursor: pointer;
+}
+.fText{
+    font-size: 10px;
+    color: rgb(88, 87, 88);
+}
