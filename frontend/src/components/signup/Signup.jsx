@@ -4,6 +4,7 @@ import "./signup.css";
 import React, { useState } from "react";
 import axios from "axios";
 
+
 function CreateAcc() {
   const navigate = useNavigate();
   const navigateToMenu = () => {
@@ -12,21 +13,25 @@ function CreateAcc() {
 function submitHandler(e){
   e.preventDefault()
   const user={
-    username:username,
+    email:email,
     password:password,
-    confirm_password:confirm
+    confirm:confirm
   }
-  axios.post("http://localhost:4000/signup",user)
+  if(password==confirm)
+  {
+  axios.post("http://localhost:8002/api/signUp",user)
   navigateToMenu()
-  console.log(user)
+  }
+  else
+    alert("password and confirm password should be same")
 }
 
-  const [username, setUsername] = useState("");
+  const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [confirm, setConfirm] = useState("");
   return (
     <div id="signup">
-      <form id="signup_form" onSubmit={submitHandler}>
+      <form id="signup_form" >
         <br />
         <h1>Sign Up</h1>
         <br />
@@ -38,8 +43,8 @@ function submitHandler(e){
             autoComplete="off"
             required
             autoFocus
-            value={username}
-            onChange={(event) => setUsername(event.target.value)}
+            value={email}
+            onChange={(event) => setEmail(event.target.value)}
           />
           {/* {username} */}
           <br />
@@ -65,7 +70,7 @@ function submitHandler(e){
           {/* {confirm} */}
           <br />
           <br />
-          <button onClick={navigateToMenu}>Sign Up</button>
+          <button onClick={submitHandler}>Sign Up</button>
         </center>
       </form>
     </div>
