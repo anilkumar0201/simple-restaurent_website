@@ -1,2 +1,2 @@
 Hi 
-Here is my first Simple website of an restauren
+Here is my first Simple website of an restaurent 
